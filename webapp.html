@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dog Match Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #f8f9fa, #e9f7ef);
+    }
+    .card {
+      border-radius: 20px;
+    }
+    .result-card {
+      transition: transform 0.3s;
+    }
+    .result-card:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+  <div class="container-fluid justify-content-end">
+    <div>
+      <a href="/index.html" class="btn btn-outline-primary me-2">Main Page</a>
+      <a href="./Scratch.html" class="btn btn-outline-secondary">Scratch Page</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container py-5">
+  <div class="card shadow p-4">
+    <h2 class="text-center mb-4">🐶 Find Your Perfect Dog</h2>
+
+    <div class="progress mb-4">
+      <div id="progressBar" class="progress-bar" style="width: 0%"></div>
+    </div>
+
+    <form id="quizForm">
+
+      <!-- Question 1 -->
+      <div class="question">
+        <h5>1. How active are you?</h5>
+        <select class="form-select" name="activity" required>
+          <option value="">Select</option>
+          <option value="low">Low (chill lifestyle)</option>
+          <option value="medium">Moderate</option>
+          <option value="high">Very active</option>
+        </select>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question mt-3">
+        <h5>2. Living space?</h5>
+        <select class="form-select" name="space" required>
+          <option value="">Select</option>
+          <option value="apartment">Apartment</option>
+          <option value="house">House</option>
+          <option value="farm">Large property</option>
+        </select>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="question mt-3">
+        <h5>3. Grooming tolerance?</h5>
+        <select class="form-select" name="grooming" required>
+          <option value="">Select</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="question mt-3">
+        <h5>4. Experience with dogs?</h5>
+        <select class="form-select" name="experience" required>
+          <option value="">Select</option>
+          <option value="new">Beginner</option>
+          <option value="some">Some experience</option>
+          <option value="expert">Expert</option>
+        </select>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="question mt-3">
+        <h5>5. Preferred size?</h5>
+        <select class="form-select" name="size" required>
+          <option value="">Select</option>
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-success mt-4 w-100">Find My Dog 🐾</button>
+    </form>
+
+    <div id="results" class="mt-5"></div>
+  </div>
+</div>
+
+<script>
+const dogs = [
+  {
+    name: "Golden Retriever",
+    traits: {activity: "high", space: "house", grooming: "high", experience: "some", size: "large"},
+    description: "Friendly, loyal, great for active families."
+  },
+  {
+    name: "French Bulldog",
+    traits: {activity: "low", space: "apartment", grooming: "low", experience: "new", size: "small"},
+    description: "Chill, affectionate, great for apartments."
+  },
+  {
+    name: "Border Collie",
+    traits: {activity: "high", space: "farm", grooming: "medium", experience: "expert", size: "medium"},
+    description: "Extremely smart, needs lots of exercise."
+  },
+  {
+    name: "Poodle",
+    traits: {activity: "medium", space: "house", grooming: "high", experience: "some", size: "medium"},
+    description: "Smart, hypoallergenic, stylish."
+  },
+  {
+    name: "Dachshund",
+    traits: {activity: "low", space: "apartment", grooming: "low", experience: "new", size: "small"},
+    description: "Playful, stubborn, great small companion."
+  }
+];
+
+document.getElementById("quizForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+  let scores = [];
+
+  dogs.forEach(dog => {
+    let score = 0;
+    for (let [key, value] of formData.entries()) {
+      if (dog.traits[key] === value) score += 2;
+      else score += 0;
+    }
+    scores.push({dog, score});
+  });
+
+  scores.sort((a, b) => b.score - a.score);
+
+  displayResults(scores.slice(0, 3));
+  updateProgress(100);
+});
+
+function displayResults(topDogs) {
+  const resultsDiv = document.getElementById("results");
+  resultsDiv.innerHTML = "<h4>Your Top Matches:</h4>";
+
+  topDogs.forEach(result => {
+    resultsDiv.innerHTML += `
+      <div class="card result-card mt-3 p-3">
+        <h5>${result.dog.name}</h5>
+        <p>${result.dog.description}</p>
+        <span class="badge bg-success">Match Score: ${result.score}</span>
+      </div>
+    `;
+  });
+}
+
+function updateProgress(val) {
+  document.getElementById("progressBar").style.width = val + "%";
+}
+
+// update progress dynamically
+document.querySelectorAll("select").forEach(select => {
+  select.addEventListener("change", () => {
+    let total = document.querySelectorAll("select").length;
+    let filled = [...document.querySelectorAll("select")].filter(s => s.value !== "").length;
+    let percent = (filled / total) * 100;
+    updateProgress(percent);
+  });
+});
+</script>
+
+</body>
+</html>

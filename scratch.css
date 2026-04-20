@@ -1,0 +1,38 @@
+.body {
+
+}
+
+.whitney{
+
+
+
+}
+
+
+.title{
+color: rgb(129, 52, 96);
+text-align: center;
+
+
+}
+.para{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.background{
+background-color: darkgray;
+}
+
+.bottom{
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+color: rgba(230, 26, 94, 0.511);
+font-style: bold;
+font-style: italic;
+}
+
+.lastone{
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+color: rgb(99, 5, 52);
+font-style: bold;
+}
+

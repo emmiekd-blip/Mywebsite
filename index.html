@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio | Dog Training & HR</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="./css/Indexcss.css">
+   <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        /* Sidebar Styling */
+        .sidebar {
+            background-color: #2c3e50;
+            color: white;
+            min-height: 100vh;
+            padding: 2rem;
+            position: sticky;
+            top: 0;
+        }
+        .sidebar .nav-link {
+            color: #bdc3c7;
+            padding: 0.5rem 0;
+            font-weight: 500;
+        }
+        .sidebar .nav-link:hover, .sidebar .nav-link.active {
+            color: #1abc9c;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 4px solid #1abc9c;
+            margin-bottom: 1.5rem;
+        }
+        /* Main Content Styling */
+        .content-section {
+            padding: 5rem 2rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .accent-text {
+            color: #1abc9c;
+        }
+        .resume-item {
+            margin-bottom: 2.5rem;
+        }
+        .badge-custom {
+            background-color: #1abc9c;
+            color: white;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-3 col-lg-2 d-md-block sidebar text-center">
+            <div class="position-sticky">
+                <img src="/puppy.jpg" class="rounded-circle profile-img" alt="Profile">
+                <h3 class="mb-4">HR & K9 Professional</h3>
+                <ul class="nav flex-column" class="font">
+                    <li class="nav-item"><a class="nav-link active" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resume">Résumé</a></li>
+                    <li class="nav-item"><a class="nav-link" href="scratch.html">Scratch Page</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/html/webapp.html">Find Your Puppy</a></li>
+
+                </ul>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            
+            <section id="about" class="content-section">
+                <h1 class="display-2 fw-bold mb-3">Bridging the <span class="accent-text">Gap</span></h1>
+                <p class="lead mb-4">
+                    Expertise in Human Resources with a specialized focus on <strong>Canine Behavioral Training</strong>. 
+                    I bring a unique perspective to interpersonal and inter-species dynamics.
+                </p>
+                <div class="row g-4 mt-2">
+                    <div class="col-md-6">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Human Resources</h5>
+                                <p class="card-text">Specializing in employee relations and organizational development within legal environments.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Canine Training</h5>
+                                <p class="card-text">Utilizing positive reinforcement to foster better relationships between pets and their owners.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="resume" class="content-section">
+                <h2 class="mb-5 fw-bold">Experience & Education</h2>
+
+                <div class="resume-item">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="fw-bold">HR Assistant</h4>
+                        <span class="text-muted fw-bold">2025 - Present</span>
+                    </div>
+                    <h6 class="accent-text">Professional Law Firm</h6>
+                    <p>Facilitating recruitment, onboarding, and policy implementation. Managed sensitive documentation and professional communications in a high-pressure corporate environment.</p>
+                </div>
+
+                <div class="resume-item">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="fw-bold">Customer Service & Operations</h4>
+                        <span class="text-muted fw-bold">2024 - 2025</span>
+                    </div>
+                    <h6 class="accent-text">Crumbl Cookies</h6>
+                    <p>Spent one year navigating high-volume service. Developed a strong ability to remain professional and calm when dealing with challenging personalities and "tough" clientele.</p>
+                </div>
+
+                <hr class="my-5">
+
+                <div class="resume-item">
+                    <h4 class="fw-bold">Education</h4>
+                    <div class="mt-4">
+                        <h6 class="mb-0 fw-bold">Brigham Young University (BYU)</h6>
+                        <p class="text-muted">B.S. in Human Resources | Current Student</p>
+                    </div>
+                    <div class="mt-3">
+                        <h6 class="mb-0 fw-bold">Associate of Arts</h6>
+                        <p class="text-muted">General Studies | 2-Year Degree Conferred</p>
+                    </div>
+                </div>
+
+                <hr class="my-5">
+
+                <div class="resume-item">
+                    <h4 class="fw-bold mb-3">Core Skills</h4>
+                    <div>
+                        <span class="badge rounded-pill badge-custom p-2 px-3">Conflict De-escalation</span>
+                        <span class="badge rounded-pill badge-custom p-2 px-3">HRIS Management</span>
+                        <span class="badge rounded-pill badge-custom p-2 px-3">Behavioral Shaping</span>
+                        <span class="badge rounded-pill badge-custom p-2 px-3">Legal Compliance</span>
+                        <span class="badge rounded-pill badge-custom p-2 px-3">Interpersonal Relations</span>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="py-4">
+                <p class="text-muted text-center small">&copy; 2026 Professional Portfolio | Built with Bootstrap</p>
+            </footer>
+
+        </main>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
